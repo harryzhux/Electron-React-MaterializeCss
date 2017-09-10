@@ -3,7 +3,7 @@ const {app, BrowserWindow, crashReporter} = require('electron');
 crashReporter.start({
   productName: 'electron-react',
   companyName: 'Runtime Design Automation',
-  submitURL: 'http://localhost:8081/api/app-crashes',
+  submitURL: 'http://localhost:8080/api/app-crashes',
   uploadToServer: true
 });
 
@@ -21,9 +21,9 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: winWidth, height: winHeight});
 
   // and load the index.html of the app.
-  //mainWindow.loadURL('file://' + __dirname + '/index.html');
+  //mainWindow.loadURL('file://' + __dirname + '/public/index.html');
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, '/index.html'),
+    pathname: path.join(__dirname, '/html/index.html'),
     protocol: 'file:',
     slashes: true
   }));
